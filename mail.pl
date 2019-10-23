@@ -14,8 +14,8 @@ use strict;
 my $Auth = Azure::AD::DeviceLogin->new(
         resource_id => 'https://graph.microsoft.com/',
         message_handler => sub { say $_[0] },
-        client_id => '2b822d25-2b32-48a1-98ea-69a8add9d2c5',
-        tenant_id => '08770c15-12e3-4662-a614-5fd03d7962e0',
+        client_id => '8d899e7a-9101-4dad-8104-34dd5348ae83',
+        tenant_id => 'c944b87d-367e-4691-a6c3-3b14725a81dd',
     );
 
 #login_to_azure_ad();
@@ -47,7 +47,6 @@ sub configure_main_menubar {
 
     my $file = $menubar->cascade(-label => 'File'); 
     $file->command(-label => "New", -command => sub { open_email_write('', '', '') });
-    $file->command(-label => "Refresh", -command => \&PrintText);
     $file->command(-label => "Exit", -command => sub { exit() });
     
     my $folders = $menubar->cascade(-label => 'Folders');
@@ -56,10 +55,6 @@ sub configure_main_menubar {
     }
 
     $menubar;
-}
-
-sub PrintText{
-    # my $lbl = $Body->Label(-text => "This is new text", -background => 'red', -width => '100', -height => '100' )->pack(-side => 'top');
 }
 
 sub fini { exit; }
